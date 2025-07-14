@@ -103,7 +103,12 @@ class ProductDetailScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                   ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('${product.title} added to cart')),
+                    );
+                    Navigator.pushNamed(context, '/cart');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF2196F3),
                   foregroundColor: Colors.white,
